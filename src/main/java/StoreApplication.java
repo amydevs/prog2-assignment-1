@@ -8,7 +8,7 @@ public class StoreApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("store.fxml"));
-
+        
         // Add code here to load the root node from the FXML file
         // and show it
     }

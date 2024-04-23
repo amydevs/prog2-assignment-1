@@ -1,13 +1,14 @@
 { pkgs ? import ./pkgs.nix {}, ci ? false }:
 
 with pkgs;
-let jdk17overide = jdk17.override { enableJavaFX = true; };
-in
 mkShell {
   nativeBuildInputs = [
     openjfx
-    jdk17overide
+    jdk17
+    maven
+    xorg.libXtst
   ];
+  APPEND_LIBRARY_PATH = "${lib.makeLibraryPath [ libGL xorg.libXtst ]}";
   shellHook = ''
     export LD_LIBRARY_PATH="$APPEND_LIBRARY_PATH:$LD_LIBRARY_PATH"
     set -o allexport
@@ -24,8 +25,6 @@ mkShell {
       ''
     }
     mkdir --parents "$(pwd)/tmp"
-
-
 
     set +v
   '';
