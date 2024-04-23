@@ -19,7 +19,7 @@
     <Label text="Sell" GridPane.columnIndex="0" GridPane.rowIndex="3" />
     <TextField text="0" fx:id="amountTf" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-    <Button text="Sell" fx:id="sellBtn" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    <Button text="Sell" fx:id="sellBtn" GridPane.halignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
     <Label text="Cash" GridPane.columnIndex="0" GridPane.rowIndex="5" />
     <Text fx:id="cashTxt" GridPane.columnIndex="1" GridPane.rowIndex="5" />
