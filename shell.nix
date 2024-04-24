@@ -3,8 +3,6 @@
 with pkgs;
 mkShell {
   nativeBuildInputs = [
-    openjfx
-    jdk17
     oraclejdk8
     maven
     xorg.libX11
@@ -28,9 +26,7 @@ mkShell {
       ''
     }
     mkdir --parents "$(pwd)/tmp"
-
-    alias mvn8="JAVA_HOME=${ oraclejdk8.outPath } mvn"
-
+    
     set +v
   '';
 }
