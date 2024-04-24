@@ -7,11 +7,13 @@ mkShell {
     jdk17
     oraclejdk8
     maven
+    xorg.libX11
     xorg.libXtst
   ];
   APPEND_LIBRARY_PATH = "${lib.makeLibraryPath [ libGL xorg.libXtst ]}";
   shellHook = ''
     export LD_LIBRARY_PATH="$APPEND_LIBRARY_PATH:$LD_LIBRARY_PATH"
+
     set -o allexport
     . ./.env
     set +o allexport
@@ -26,6 +28,8 @@ mkShell {
       ''
     }
     mkdir --parents "$(pwd)/tmp"
+
+    alias mvn8="JAVA_HOME=${ oraclejdk8.outPath } mvn"
 
     set +v
   '';
