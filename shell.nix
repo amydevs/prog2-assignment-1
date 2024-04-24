@@ -5,6 +5,7 @@ mkShell {
   nativeBuildInputs = [
     openjfx
     jdk17
+    oraclejdk8
     maven
     xorg.libXtst
   ];
