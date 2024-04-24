@@ -3,6 +3,7 @@
 with pkgs;
 mkShell {
   nativeBuildInputs = [
+    # you're going to have to install this manually and it's gonna hurt bucko
     oraclejdk8
     maven
     xorg.libX11
